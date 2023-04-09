@@ -9,7 +9,16 @@ try:
             global Finish
             answer = random.randint(x,y)
             number_input = 0
-            times_to_guess = 3
+            if y-x < 10:
+                times_to_guess = 3
+            elif y-x < 100:
+                times_to_guess = 5
+            elif y-x < 1000:
+                times_to_guess = 8
+            elif y-x < 10000:
+                times_to_guess = 13
+            elif y-x < 100000:
+                times_to_guess = 20
             Finish = False
             while answer != number_input:
                 if times_to_guess == 0:
@@ -37,7 +46,6 @@ try:
         print(f"You've lost the game, the answer was {answer}")
 
 except:
-    print("Invalid value")
-
+    print("Invalid value") 
 
 
